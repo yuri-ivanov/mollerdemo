@@ -1,19 +1,16 @@
-function PhoneListCtrl($scope) {
-    $scope.phones = [
-        {"name": "Nexus S",
-            "snippet": "Fast just got faster with Nexus S.",
-            "age": 0},
-        {"name": "Motorola XOOM™ with Wi-Fi",
-            "snippet": "The Next, Next Generation tablet.",
-            "age": 1},
-        {"name": "MOTOROLA XOOM™",
-            "snippet": "The Next, Next Generation tablet.",
-            "age": 2}
-    ];
+'use strict';
+
+var phonecatControllers = angular.module('phonecatControllers', []);
+
+phonecatControllers.controller('PhoneListCtrl', function ($scope, $http) {
+    $http.get('json/phones.json').success(function(data) {
+        $scope.phones = data;
+    });
 
     $scope.orderProp = 'age';
-}
+});
 
-function PhoneDetailCtrl($scope, $routeParams) {
-    $scope.phoneId = $routeParams.phoneId;
-}
+phonecatControllers.controller('PhoneDetailCtrl', function PhoneDetailCtrl($scope, $routeParams) {
+        $scope.phoneId = $routeParams.phoneId;
+});
+
