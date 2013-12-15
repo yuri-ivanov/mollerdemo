@@ -13,5 +13,10 @@ carDetailsConrollers.controller('carDetailCtrl', function carDetailCtrl($scope, 
         $scope.car = data;
     };
 
+    $scope.submit = function(){
+        console.log("car",$scope.car);
+        $scope.submittedData = $scope.car;
+    };
+
 });
 

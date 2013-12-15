@@ -9,12 +9,15 @@ carConrollers.controller('carListCtrl', function ($scope, $rootScope, $http) {
     });
 
     $scope.gridSelections = [];
+    $scope.filterOptions= {filterText: "", useExternalFilter: false};
 
     $scope.carGrid = {
         data: 'cars',
         multiSelect: false,
         showGroupPanel: false,
         selectedItems: $scope.gridSelections,
+        showFilter: true,
+        filterOptions: $scope.filterOptions,
         columnDefs: [
             {field:'reference', displayName:'Ref'}, {field:'customer', displayName:'Customer'},
             {field:'model', displayName:'Model'}, {field:'vin', displayName:'VIN'},

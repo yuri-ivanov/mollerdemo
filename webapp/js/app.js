@@ -16,5 +16,5 @@ phonecatApp.config(['$routeProvider', function($routeProvider) {
             when('/phones/:phoneId', {templateUrl: 'templates/phone-detail.html', controller: 'PhoneDetailCtrl'}).
             when('/cars', {templateUrl: 'templates/car-list.html', controller: 'carListCtrl'}).
             when('/admin', {templateUrl: 'templates/admin.html', controller: 'adminCtrl'}).
-            otherwise({redirectTo: '/phones'});
+            otherwise({redirectTo: '/cars'});
     }]);

@@ -1,4 +1,4 @@
-<form class="form-horizontal">
+<form class="form-horizontal" ng-submit="submit()" ng-controller="carDetailCtrl">
     <legend>Car Details</legend>
     <div class="control-group">
         <label class="control-label">VIN</label>
@@ -18,4 +18,11 @@
             {{car.customer}}
         </div>
     </div>
+    <div >
+        <input type="submit" value="Submit">
+    </div>
+    <p>
+     {{submittedData}}
+    </p>
 </form>
+
